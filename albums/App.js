@@ -5,7 +5,7 @@ import Header from './src/components/header';
 
 // Create a component
 export default App = () => (
-  <Header />
+  <Header headerText={'Albums'} />
 );
 
 // Only the 'root' component uses 'AppRegistry'
