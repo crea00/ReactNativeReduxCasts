@@ -13,10 +13,10 @@ Docs : https://facebook.github.io/react-native/
 <br>
 <br>
 ## Getting Started
-  - Install dependencies per operating system
-  - Install ESLint depending on code editor
-  - Generate a React Native Project
-  - Get coding
+  - Install dependencies per operating system<br>
+  - Install ESLint depending on code editor<br>
+  - Generate a React Native Project<br>
+  - Get coding<br>
 
 
 
