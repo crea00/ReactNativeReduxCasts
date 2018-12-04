@@ -7,7 +7,7 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => 
   return (
     <View style={containerStyle}>
       <Text style={labelStyle}>{label}</Text>
-      <TextInput 
+      <TextInput
         secureTextEntry={secureTextEntry}
         placeholder={placeholder}
         autoCorrect={false}
@@ -32,7 +32,7 @@ const styles = {
     fontSize: 18,
     paddingLeft: 20,
     flex: 1
-  }, 
+  },
   containerStyle: {
     height: 40,
     flex: 1,
