@@ -10,6 +10,8 @@ const INITIAL_STATE = {
 
 // The important thing to keep in mind is that we can never return 'undefined' from reducer
 export default (state=INITIAL_STATE, action) => {
+  console.log(action);
+  
   switch (action.type) {
     case EMAIL_CHANGED:
       return { ...state, email: action.payload };
