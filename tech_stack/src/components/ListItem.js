@@ -57,6 +57,7 @@ const styles = {
   }
 }
 
+// mapStateToProps is to interface from the application level state down to the component level
 const mapStateToProps = (state, ownProps) => {
   const expanded = state.selectedLibraryId === ownProps.library.item.id;
 
