@@ -19,3 +19,14 @@ export default (state=INITIAL_STATE, action) => {
       return state;
   }
 };
+
+/**
+ *  Proposed State
+ * 
+ *  Email: When the user types something
+ *  Password: When the user types something in the password field
+ *  Loading: True when we start an auth request, false when it is complete
+ *  Error: Default to empty string. Toss in an error message when we get a failed auth request
+ *  User: Default to null. Put in the user model when we successfully auth
+ * 
+ */
