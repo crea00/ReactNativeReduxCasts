@@ -15,7 +15,7 @@ const INITIAL_STATE = {
  };
 
 // The important thing to keep in mind is that we can never return 'undefined' from reducer
-export default (state=INITIAL_STATE, action) => {
+export default (state = INITIAL_STATE, action) => {
   console.log(action);
   
   switch (action.type) {
@@ -28,8 +28,8 @@ export default (state=INITIAL_STATE, action) => {
     case LOGIN_USER_SUCCESS:
       return { ...state, ...INITIAL_STATE, user: action.payload };
     case LOGIN_USER_FAIL:
-      return { ...state, error: 
-        'Authentication Failed!', 
+      return { ...state, 
+        error: 'Authentication Failed!', 
         password: '', 
         loading: false 
       };
