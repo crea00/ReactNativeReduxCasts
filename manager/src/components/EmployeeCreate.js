@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
 import { Card, CardSection, Input, Button } from './common';
 
 class EmployeeCreate extends Component {
@@ -15,9 +14,9 @@ class EmployeeCreate extends Component {
 
         <CardSection>
           <Input
-              label="Phone"
-              placeholder="555-555-5555"
-            />
+            label="Phone"
+            placeholder="555-555-5555"
+          />
         </CardSection>
 
         <CardSection>
