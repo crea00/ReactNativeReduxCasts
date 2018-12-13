@@ -45,6 +45,12 @@ export const employeesFetch = () => {
     firebase.database().ref(`/users/${currentUser.uid}/employees`)
     // Snapshot is not the actual data.
     // It is an object that describes the data that we could get access to.
+
+    // Firebase is a live dynamic data store, 
+    // so anytime taht remote collection or remote pool of employees 
+    // gets updated we will get notified by this on value event handler 
+    // So, any time we get a new employee we should automatically
+    // get a dispatch of employees fetch success along with a new list of employees
       .on('value', snapshot => {
         dispatch({
           type: EMPLOYEES_FETCH_SUCCESS,
