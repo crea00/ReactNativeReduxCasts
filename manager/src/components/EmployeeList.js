@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ListView, View, Text } from 'react-native';
@@ -10,15 +11,20 @@ class EmployeeList extends Component {
     this.createDataSource(this.props);
   }
 
-  // componentWillReceiveProps will be called whenever we are about to receive a new set of props
-  // to rerun for component with.
-  // it gets called with the new set of props that the company is about to be fed 
-  // and it's captured as first argument to the method 
-  componentWillReceiveProps(nextProps) {
+  /**
+   *  componentWillReceiveProps 
+   * 
+   *  componentWillReceiveProps will be called whenever we are about to receive a new set of props
+   *  to rerun for component with.
+   *  it gets called with the new set of props that the company is about to be fed 
+   *  and it's captured as first argument to the method 
+   */
+   
+  componentWillReceiveProps(nextProps) { 
     // nextProps are the next set of props that this component
     // will be rendered with
     // this.props is still the old set of props
-    
+
     this.createDataSource(nextProps);
   }
 
@@ -31,6 +37,8 @@ class EmployeeList extends Component {
   }
 
   render() {
+    console.log(this.props);
+
     return (
       <View>
         <Text>Employee List</Text>
@@ -44,4 +52,12 @@ class EmployeeList extends Component {
   }
 }
 
-export default connect(null, { employeesFetch })(EmployeeList);
+const mapStateToProps = state => {
+  const employees = _.map(state.employees, (val, uid) => {
+    return { ...val, uid }; 
+  });
+
+  return { employees };
+};
+
+export default connect(mapStateToProps, { employeesFetch })(EmployeeList);
