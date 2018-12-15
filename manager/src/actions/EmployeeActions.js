@@ -4,6 +4,7 @@ import {
   EMPLOYEE_UPDATE, 
   EMPLOYEE_CREATE,
   EMPLOYEES_FETCH_SUCCESS,
+  EMPLOYEE_SAVE_SUCCESS,
 } from './types';
 
 export const employeeUpdate = ({ prop, value }) => {
@@ -51,6 +52,10 @@ export const employeesFetch = () => {
     // gets updated we will get notified by this on value event handler 
     // So, any time we get a new employee we should automatically
     // get a dispatch of employees fetch success along with a new list of employees
+
+    // any time we update or save a record we're going to automatically get this event across
+    // Dispatch grabbed the new employees and load them up
+    // So that is why we're seeing that instant update for us when we just do the save 
       .on('value', snapshot => {
         dispatch({
           type: EMPLOYEES_FETCH_SUCCESS,
@@ -66,6 +71,9 @@ export const employeeSave = ({ name, phone, shift, uid }) => {
   return () => {
     firebase.database().ref(`/users/${currentUser.uid}/employees/${uid}`)
       .set({ name, phone, shift })
-      .then(() => console.log('Saved!'));
+      .then((dispatch) => {
+        dispatch({ type: EMPLOYEE_SAVE_SUCCESS });
+        Actions.employeeList({ type: 'reset' });
+      });
   };
 };
