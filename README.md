@@ -17,6 +17,3 @@ Docs : https://facebook.github.io/react-native/
   - Install ESLint depending on code editor<br>
   - Generate a React Native Project<br>
   - Get coding<br>
-
-
-
