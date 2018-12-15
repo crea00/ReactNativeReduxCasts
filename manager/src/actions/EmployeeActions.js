@@ -82,10 +82,10 @@ export const employeeDelete = ({ uid }) => {
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
-    firebase.database().ref(`/users/${currentUser.uid}/employeees/${uid}`)
+    firebase.database().ref(`/users/${currentUser.uid}/employees/${uid}`)
       .remove()
       .then(() => {
-        Actions.pop();
+        Actions.employeeList({ type: 'reset' });
       });
   };
 };
